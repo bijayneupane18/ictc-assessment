@@ -19,7 +19,7 @@ const Banner = () => {
             <div className="flex flex-col justify-center items-center md:items-start gap-4 h-full w-full md:w-2/3">
             <h1 className="text-5xl text-center md:text-left font-bold text-white md:tracking-wide">Lorem Ipsum is simply dummy</h1>
             <p className="text-lg text-white text-center md:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <ColorButton variant="contained" className="w-fit text-white" endIcon={<IoCartOutline/>}>Shop Now</ColorButton>
+            <ColorButton variant="contained" className="w-fit text-white" endIcon={<IoCartOutline className="animate-bounce"/>}>Shop Now</ColorButton>
             </div>
             <div className="hidden w-1/2 md:flex justify-center items-center">
             <img src={BannerModel} alt="Let's go" className="h-full"/>
