@@ -66,12 +66,12 @@ const Header = () => {
           }
         </button>
         <ul
-          className={`md:hidden absolute top-16 left-0 w-full h-screen bg-white transition-transform duration-300 ease-in-out ${
-            mobile? "flex flex-col items-center py-4 gap-4" : "hidden"
+          className={`md:hidden absolute top-16 left-0 w-full h-screen bg-slate-300 transition-transform duration-300 ease-in-out ${
+            mobile? "flex flex-col py-4 gap-4 z-50" : "hidden"
           }`}
         >
           {navbarItems.map((data, index) => (
-            <NavLink to={data.path}>
+            <NavLink to={data.path} className="w-full">
               <li
                 key={index}
                 className={`px-4 py-1 rounded-full ${

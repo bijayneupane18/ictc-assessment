@@ -15,13 +15,13 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
 const Banner = () => {
   return (
     <>
-        <div className="h-[500px] w-full flex gap-10 px-24 rounded-2xl bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600">
-            <div className="flex flex-col justify-center gap-4 h-full w-1/2">
-            <h1 className="text-5xl font-bold text-white tracking-wide">Lorem Ipsum is simply dummy</h1>
-            <p className="text-lg text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div className="h-[500px] w-full flex gap-4 px-6 sm:px-10 md:px-14 lg:px-24 rounded-2xl bg-gradient-to-r from-orange-600 via-orange-400 to-orange-600">
+            <div className="flex flex-col justify-center items-center md:items-start gap-4 h-full w-full md:w-2/3">
+            <h1 className="text-5xl text-center md:text-left font-bold text-white md:tracking-wide">Lorem Ipsum is simply dummy</h1>
+            <p className="text-lg text-white text-center md:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <ColorButton variant="contained" className="w-fit text-white" endIcon={<IoCartOutline/>}>Shop Now</ColorButton>
             </div>
-            <div className="w-1/2 flex justify-center items-center">
+            <div className="hidden w-1/2 md:flex justify-center items-center">
             <img src={BannerModel} alt="Let's go" className="h-full"/>
             </div>
         </div> 
