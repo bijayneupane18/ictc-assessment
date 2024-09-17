@@ -44,7 +44,7 @@ function Featured() {
               ? data.map((person) => (
                   <div
                     key={person.id}
-                    className="flex items-center justify-center shadow-md border h-full lg:w-40 md:w-28 p-2 bg-slate-200 rounded-xl"
+                    className="flex items-center justify-center shadow-md border h-full lg:w-40 md:w-28 bg-slate-200 rounded-xl"
                   >
                     {loading ? (
                       <p>Loading...</p>
@@ -54,7 +54,7 @@ function Featured() {
                       <Avatar
                         alt={person.id.toString()}
                         src={person.avatar}
-                        sx={{ width: 100, height: 100 }}
+                        sx={{ width: 90, height: 90 }}
                       />
                     )}
                   </div>
