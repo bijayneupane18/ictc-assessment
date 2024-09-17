@@ -32,9 +32,6 @@ function Featured() {
     // getData();
   }, []);
 
-  console.log(data);
-  console.log(error);
-
   return (
     <>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 py-6">
@@ -57,7 +54,7 @@ function Featured() {
                       <Avatar
                         alt={person.id.toString()}
                         src={person.avatar}
-                        sx={{ width: 80, height: 80 }}
+                        sx={{ width: 100, height: 100 }}
                       />
                     )}
                   </div>
@@ -83,7 +80,7 @@ function Featured() {
           <h2 className="font-bold text-xl text-teal-600 underline decoration-2 underline-offset-8">
             Platforms
           </h2>
-          <div className="grid grid-cols-3 gap-2 py-4 h-40 overflow-hidden">
+          <div className="grid grid-cols-3 gap-2 py-4 h-40">
             <div className="flex items-center justify-center shadow-md h-full lg:w-40 md:w-28 p-2 bg-slate-200 rounded-xl"></div>
             <div className="flex items-center justify-center shadow-md h-full lg:w-40 md:w-28 p-2 bg-slate-200 rounded-xl"></div>
             <div className="flex items-center justify-center shadow-md h-full lg:w-40 md:w-28 p-2 bg-slate-200 rounded-xl"></div>
