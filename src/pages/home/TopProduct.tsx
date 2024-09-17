@@ -1,42 +1,31 @@
 import {
-  Button,
-  ButtonProps,
   Card,
   CardActionArea,
-  CardActions,
-  CardContent,
   CardMedia,
-  styled,
+  CardContent,
   Typography,
+  CardActions,
+  Rating,
 } from "@mui/material";
 import { useState, useEffect } from "react";
-import { getService } from "../../service/Index";
-import { teal } from "@mui/material/colors";
 import Slider from "react-slick";
+import { getService } from "../../service/Index";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-type topOffersType = {
+type topProductType = {
   id: number;
   name: string;
   description: string;
   image: string;
   price: string;
+  rating: number;
 };
 
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText(teal[600]),
-  backgroundColor: teal[600],
-  borderRadius: "20px",
-  "&:hover": {
-    backgroundColor: teal[700],
-  },
-}));
-
-const TopOffers = () => {
+const TopProduct = () => {
   const [error, setError] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<topOffersType[]>([]);
+  const [data, setData] = useState<topProductType[]>([]);
 
   const getData = async () => {
     try {
@@ -61,25 +50,37 @@ const TopOffers = () => {
   const CustomNextArrow = (props: any) => {
     const { className, style, onClick } = props;
     return (
-        <div
+      <div
         className={className}
-            style={{ ...style, display: "block", background: "teal", borderRadius: "50%", right:"10px" }}
-            onClick={onClick}
-        />
+        style={{
+          ...style,
+          display: "block",
+          background: "teal",
+          borderRadius: "50%",
+          right: "10px",
+        }}
+        onClick={onClick}
+      />
     );
-};
+  };
 
-const CustomPrevArrow = (props: any) => {
+  const CustomPrevArrow = (props: any) => {
     const { className, style, onClick } = props;
     return (
-        <div
-            className={className}
-            style={{ ...style, display: "block", background: "teal", borderRadius: "50%", left:"10px", zIndex:"10" }}
-            onClick={onClick}
-        />
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          background: "teal",
+          borderRadius: "50%",
+          left: "10px",
+          zIndex: "10",
+        }}
+        onClick={onClick}
+      />
     );
-};
-
+  };
 
   var settings = {
     dots: true,
@@ -88,6 +89,7 @@ const CustomPrevArrow = (props: any) => {
     slidesToShow: 5,
     slidesToScroll: 5,
     initialSlide: 0,
+    arrows: true,
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
     responsive: [
@@ -126,12 +128,11 @@ const CustomPrevArrow = (props: any) => {
       },
     ],
   };
-
   return (
     <>
       <div className="flex flex-col">
         <h2 className="font-bold text-xl text-teal-600 underline decoration-2 underline-offset-8">
-          Top Offers{" "}
+          Top Products{" "}
           <span className="text-lg text-slate-700 font-normal">
             of the month
           </span>
@@ -139,12 +140,15 @@ const CustomPrevArrow = (props: any) => {
         <Slider {...settings} className="my-10 px-6">
           {/* <div className="flex gap-4 items-center overflow-scroll no-scrollbar"> */}
           {data?.map((data) => (
-            <div key={data.id} className="px-4">
-              <Card  sx={{borderRadius: "5%"}}>
+            <div key={data.id} className="relative px-4">
+              <div className="absolute flex items-center justify-center right-4 top-0 z-10 h-14 w-14 p-1 rounded-tr-xl rounded-bl-xl bg-teal-600 text-white">
+                15% <br></br>Off
+              </div>
+              <Card sx={{ borderRadius: "5%" }}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    sx={{ height: 120 }}
+                    sx={{ height: 150 }}
                     image={data.image}
                     alt=""
                   />
@@ -154,16 +158,17 @@ const CustomPrevArrow = (props: any) => {
                       sx={{ color: "text.secondary" }}
                     >
                       {data.description}
-                      <Typography gutterBottom variant="h5" component="div">
-                        ${data.price}
-                      </Typography>
                     </Typography>
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <ColorButton size="small" variant="contained">
-                    Add to cart
-                  </ColorButton>
+                  <Rating
+                    name="read-only"
+                    value={data.rating}
+                    precision={0.5}
+                    size="small"
+                    readOnly
+                  />
                 </CardActions>
               </Card>
             </div>
@@ -178,4 +183,4 @@ const CustomPrevArrow = (props: any) => {
   );
 };
 
-export default TopOffers;
+export default TopProduct;
