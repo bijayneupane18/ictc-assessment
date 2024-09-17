@@ -24,8 +24,8 @@ const TopFranchise = () => {
         {franchiseList.map((data) => (
             <Link key={data.id} to="">
           <div className="flex flex-col items-center gap-4 my-5 xsm:my-10">
-            <div className="flex justify-center items-center h-36 w-36 p-4 rounded-full bg-slate-200 shadow-xl">
-              <img src={data.logo} alt="" className="h-full w-full" />
+            <div className="flex justify-center items-center h-36 w-36 rounded-full bg-slate-200 shadow-xl">
+              <img src={data.logo} alt="" className="h-full w-full rounded-full" />
             </div>
             <h1 className="text-lg">{data.name}</h1>
           </div>

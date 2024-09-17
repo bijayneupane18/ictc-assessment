@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { getService } from "../../service/Index";
 import Slider from "react-slick";
+import { getService } from "../../service/Index";
 
-type topMembersType = {
+type luckyDrawWinnersType = {
     id: number;
     image: string;
     name: string;
 }
 
-const TopMembers = () => {
+const LuckyDrawWinners = () => {
 
     const [error, setError] = useState<any>(null);
     const [loading, setLoading] = useState(true);
-    const [data, setData] = useState<topMembersType[]>([]);
+    const [data, setData] = useState<luckyDrawWinnersType[]>([]);
   
     const getData = async () => {
       try {
@@ -113,12 +113,9 @@ const TopMembers = () => {
 
   return (
     <>
-         <div className="flex flex-col pt-8 px-10 bg-teal-600">
+       <div className="flex flex-col py-8 px-10 bg-teal-600">
         <h2 className="font-bold text-xl text-white underline decoration-2 underline-offset-8">
-          Top Members{" "}
-          <span className="text-lg text-white font-normal">
-            of the month
-          </span>
+          Top 10 Lucky Draw Winners
         </h2>
         <Slider {...settings} className="px-6">
           {/* <div className="flex gap-4 items-center overflow-scroll no-scrollbar"> */}
@@ -143,4 +140,4 @@ const TopMembers = () => {
   )
 }
 
-export default TopMembers
+export default LuckyDrawWinners
