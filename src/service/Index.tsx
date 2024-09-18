@@ -25,35 +25,3 @@ const deleteService = async (url: string, config?: any) => {
 
 export { getService, postService, putService, deleteService };
 export {baseURL};
-
-
-// const getData = async () => {
-//     try {
-//       const response = await getService("demand");
-//       setData(response.data.data);
-//       setError(null);
-//     } catch (err: any) {
-//       setError(err.message);
-//       setData([]);
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   useEffect(() => {
-//     getData();
-//   }, [verify]);
-
-//   const deleteData = async () => {
-//     try {
-//       await deleteService(`demand/${id}`);
-//     } catch (err: any) {
-//       setError(err.message);
-//     }
-//   };
-
-//   useEffect(() => {
-//     if (verify) {
-//       deleteData();
-//     }
-//   });

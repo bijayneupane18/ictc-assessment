@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/home/Home";
+import Offer from "./pages/offer/Offer";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,7 +41,7 @@ function App() {
       element: (
         <>
           <MainLayout>
-            <h1>This is offer page</h1>
+            <Offer/>
           </MainLayout>
         </>
       ),

@@ -2,7 +2,7 @@
 const Bottom = () => {
   return (
     <>
-     <div className="flex flex-col gap-1 h-fit bg-slate-200 py-2 px-10">
+     <div className="flex justify-center gap-4 h-fit bg-slate-200 py-2 px-10">
         <div className="flex justify-center gap-4 items-center">
             <p className="text-sm">Terms and Conditions</p>
             <p className="text-sm">Privacy Policy</p>

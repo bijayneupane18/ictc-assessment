@@ -26,10 +26,7 @@ function Featured() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      getData();
-    }, 1500);
-    // getData();
+    getData();
   }, []);
 
   return (

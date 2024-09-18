@@ -22,7 +22,7 @@ const TopFranchise = () => {
         {/* <div className="flex justify-between items-center flex-wrap"> */}
         <div className="grid grid-cols-1 gap-4 xsm:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 my-6 xsm:my-0">
         {franchiseList.map((data) => (
-            <Link key={data.id} to="">
+            <Link key={data.id} to="/offer">
           <div className="flex flex-col items-center gap-4 my-5 xsm:my-10">
             <div className="flex justify-center items-center h-36 w-36 rounded-full bg-slate-200 shadow-xl">
               <img src={data.logo} alt="" className="h-full w-full rounded-full" />

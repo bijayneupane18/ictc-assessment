@@ -14,7 +14,7 @@ const ColorButton = styled(Button)<ButtonProps>(() => ({
 const PromotionalBanner = () => {
   return (
     <>
-    <Link to="" className="my-6">
+    <Link to="/offer" className="my-6">
       <div className="w-full h-64 sm:px-20 py-6 my-6 rounded-2xl flex  bg-gradient-to-r from-sky-800 via-sky-600 to-sky-800">
         <div className="flex flex-col justify-center items-center md:items-start gap-2 h-full w-full md:w-1/2">
           <p className="text-xl text-white text-center md:text-left">

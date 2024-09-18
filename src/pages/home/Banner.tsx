@@ -22,7 +22,7 @@ const Banner = () => {
             <ColorButton variant="contained" className="w-fit text-white" endIcon={<IoCartOutline className="animate-bounce"/>}>Shop Now</ColorButton>
             </div>
             <div className="hidden w-1/2 md:flex justify-center items-center">
-            <img src={BannerModel} alt="Let's go" className="h-full"/>
+            <img src={BannerModel} alt="" className="h-full"/>
             </div>
         </div> 
     </>

@@ -28,10 +28,7 @@ const TopMembers = () => {
     };
   
     useEffect(() => {
-      setTimeout(() => {
-        getData();
-      }, 1500);
-      // getData();
+      getData();
     }, []);
 
     const CustomNextArrow = (props: any) => {

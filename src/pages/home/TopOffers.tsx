@@ -15,6 +15,8 @@ import { teal } from "@mui/material/colors";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { BiArrowToRight } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 type topOffersType = {
   id: number;
@@ -52,10 +54,7 @@ const TopOffers = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      getData();
-    }, 1500);
-    // getData();
+    getData();
   }, []);
 
   const CustomNextArrow = (props: any) => {
@@ -130,12 +129,15 @@ const CustomPrevArrow = (props: any) => {
   return (
     <>
       <div className="flex flex-col">
+        <div className="flex justify-between">
         <h2 className="font-bold text-xl text-teal-600 underline decoration-2 underline-offset-8">
           Top Offers{" "}
           <span className="text-lg text-slate-700 font-normal">
             of the month
           </span>
         </h2>
+        <Link to="/offer" className="flex items-center"><p className="flex xsm:gap-1 items-center text-teal-600 font-bold">View all <BiArrowToRight/></p></Link>
+        </div>
         <Slider {...settings} className="my-10 px-6">
           {/* <div className="flex gap-4 items-center overflow-scroll no-scrollbar"> */}
           {data?.map((data) => (
