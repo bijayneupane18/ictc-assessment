@@ -1,0 +1,4 @@
+how to run:
+1> Clone the repository
+2> Run the following command in the project terminal: `npm install`
+3> Run the following command in the project terminal: `npm run dev`
