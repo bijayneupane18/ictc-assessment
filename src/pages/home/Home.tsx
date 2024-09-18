@@ -1,3 +1,4 @@
+import { Divider } from "@mui/material"
 import Banner from "./Banner"
 import Featured from "./Featured"
 import LuckyDrawWinners from "./LuckyDrawWinners"
@@ -17,7 +18,9 @@ const Home = () => {
      <PromotionalBanner/>
      <TopFranchise/>
      <TopMembers/>
+     <Divider/>
      <LuckyDrawWinners/>
+     {/* <PromotionalBanner/> */}
     </>
   )
 }
