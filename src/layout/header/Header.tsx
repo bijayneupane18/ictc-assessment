@@ -46,7 +46,7 @@ const Header = () => {
       <nav className="relative h-16 flex justify-between items-center px-4 py-2">
         {/* <img src="" alt="Logo Here" height={50} width={70}/> */}
         <h1 className="text-xl font-bold">Logo Here</h1>
-        <ul className="hidden md:flex md:justify-evenly">
+        <ul className="hidden w-1/2 md:flex md:justify-evenly">
           {navbarItems.map((data, index) => (
             <NavLink to={data.path}>
               <li
